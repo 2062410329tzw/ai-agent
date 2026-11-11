@@ -2,7 +2,7 @@
 
 - 项目题目：企业知识问答 Agent。
 - 正式题号：题面未显示编号，请按招聘方实际编号填写，不能推测。
-- GitHub URL：https://github.com/2062410329tzw/ai-agent 。这是用户指定的目标代码仓库；发布状态以最终交付记录为准。
+- GitHub URL：https://github.com/2062410329tzw/ai-agent 。已推送main分支，见[交付记录](DELIVERY.md)。
 - 最终commit SHA：在项目根目录运行`git rev-parse HEAD`，使用实际输出。SHA不写入同一个commit内以避免自引用问题。
 
 ## 推送到自己的GitHub仓库

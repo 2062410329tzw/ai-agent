@@ -2,7 +2,7 @@
 
 ## 环境、复现与记录来源
 
-验证日期：2026-11-11，Windows，Python 3.10.1。另在本项目新建的空虚拟环境中运行，未安装第三方包。GitHub Actions已配置Python 3.10/3.13，但远端CI尚未执行，不能宣称Linux/3.13已验收。
+验证日期：2026-11-11，本地Windows、Python 3.10.1，另在新建的空虚拟环境中运行，未安装第三方包。源代码快照d0c5364已通过GitHub Actions的Ubuntu、Python 3.10/3.13离线测试、Mock验收及证据检查，见[CI记录](https://github.com/2062410329tzw/ai-agent/actions/runs/42995138810)。真实模型验收在Windows执行，不把离线CI称为Linux真实模型联调。
 
 开发和实际执行由Codex完成，候选人个人复核尚待本人记录。数据均为合成资料；调用外部模型只发送合成问题、合成历史、合成原文及动作协议。
 
