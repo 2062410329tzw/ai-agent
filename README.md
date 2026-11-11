@@ -12,7 +12,9 @@
 4. 比较 [正常路径](examples/live-v1/normal/run.json) 和 [冲突路径](examples/live-v1/conflict/run.json)，再比较 [内容替换](examples/live-v1-fallback/mutation/run.json)。
 5. 阅读 [测试与限制](docs/03-evaluation.md)、[AI使用](docs/04-ai-usage.md)、[复盘](docs/05-retrospective.md)。
 
-本地验证：31项自动化测试通过、离线验收10/10；真实验收主模型最终整轮6/10，服务错误项切换配置补验4/4。最终10项均有真实通过记录，涉及两个模型，全部失败记录保留。
+本地验证：36项自动化测试通过、离线验收10/10；真实验收主模型最终整轮6/10，服务错误项切换配置补验4/4。最终10项均有真实通过记录，涉及两个模型，全部失败记录保留。
+
+提交前复审及新增独立用例见[复审报告](docs/06-submission-review.md)。本轮修复了输入格式和异常模型响应的边界问题。
 
 ## 环境与安装
 

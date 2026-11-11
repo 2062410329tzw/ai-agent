@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "answer": "差旅报销申请须在费用发生后7个工作日内提交，并附发票。[POL77:RULE7]",
+  "citations": [
+    {
+      "doc_id": "POL77",
+      "version_date": "2026-10-01",
+      "section_id": "RULE7",
+      "quote": "差旅报销申请须在费用发生后7个工作日内提交，并附发票。"
+    }
+  ],
+  "gaps": [],
+  "follow_up_question": ""
+}

@@ -33,6 +33,8 @@ class KnowledgeBase:
         self.index = {}
         seen = set()
         for doc in self.documents:
+            if not isinstance(doc, dict):
+                raise ValueError("每份文档必须为JSON对象")
             for key in ("doc_id", "version_date", "title", "topic"):
                 if not isinstance(doc.get(key), str) or not doc[key].strip():
                     raise ValueError("文档元数据缺失: " + key)
@@ -43,6 +45,8 @@ class KnowledgeBase:
             if not isinstance(doc.get("sections"), list) or not doc["sections"]:
                 raise ValueError("文档缺少片段")
             for section in doc["sections"]:
+                if not isinstance(section, dict):
+                    raise ValueError("每个片段必须为JSON对象")
                 if not all(isinstance(section.get(k), str) and section[k].strip()
                            for k in ("section_id", "text")):
                     raise ValueError("无效片段")

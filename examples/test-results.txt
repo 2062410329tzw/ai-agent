@@ -1,23 +1,28 @@
 Python 3.10.1
-UTC 2026-11-11T09:08:19.713386+00:00
+UTC 2026-11-11T09:38:38.620996+00:00
 test_different_observations_change_action_path (test_agent.AcceptanceTests) ... ok
 test_offline_acceptance_cases (test_agent.AcceptanceTests) ... ok
 test_empty_question_and_bad_limits (test_agent.LoopTests) ... ok
 test_invalid_output_is_budgeted (test_agent.LoopTests) ... ok
 test_model_failure_does_not_fall_back_to_mock (test_agent.LoopTests) ... ok
+test_non_string_history_role_rejected_without_crash (test_agent.LoopTests) ... ok
 test_rejected_citation_can_be_repaired_by_model (test_agent.LoopTests) ... ok
 test_tool_budget_does_not_execute_extra_call (test_agent.LoopTests) ... ok
 test_tool_result_reaches_next_model_call (test_agent.LoopTests) ... ok
 test_untrusted_history_cannot_set_system_role (test_agent.LoopTests) ... ok
+test_wrong_history_type_not_silently_accepted (test_agent.LoopTests) ... ok
 test_http_error_body_not_leaked (test_agent.ModelAdapterTests) ... ok
 test_insecure_endpoint_rejected (test_agent.ModelAdapterTests) ... ok
 test_missing_key_fails_explicitly (test_agent.ModelAdapterTests) ... ok
+test_null_model_choice_returns_explicit_incomplete_status (test_agent.ModelAdapterTests) ... ok
 test_payload_and_metadata_without_reasoning (test_agent.ModelAdapterTests) ... ok
 test_duplicate_ids_rejected (test_agent.ToolTests) ... ok
 test_explicit_topic_excludes_unrelated_workflows (test_agent.ToolTests) ... ok
 test_invalid_tool_arguments (test_agent.ToolTests) ... ok
 test_missing_document_is_not_evidence (test_agent.ToolTests) ... ok
 test_mutation_changes_fingerprint (test_agent.ToolTests) ... ok
+test_non_object_document_rejected_without_crash (test_agent.ToolTests) ... ok
+test_non_object_section_rejected_without_crash (test_agent.ToolTests) ... ok
 test_paraphrase_retains_both_conflicting_documents (test_agent.ToolTests) ... ok
 test_read_is_exact_and_detached (test_agent.ToolTests) ... ok
 test_search_reports_truncation (test_agent.ToolTests) ... ok
@@ -33,6 +38,6 @@ test_unread_citation_rejected (test_agent.ValidationTests) ... ok
 test_valid_citation (test_agent.ValidationTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 31 tests in 0.015s
+Ran 36 tests in 0.019s
 
 OK

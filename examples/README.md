@@ -19,3 +19,5 @@
 每个case内：input.json为原始输入，documents.json为该次知识库，result.json为实际结果，run.json为完整记录，trace.jsonl为逐步记录，checks.json为自动断言。日志中的reason是模型对行动的简短说明，不是内部思维链。
 
 test-results.txt与test-summary.json来自unittest实际执行；cli-smoke.json为真实CLI入口检查。执行脚本可重建汇总，不能修改原始结果制造通过记录。
+
+提交前复审：mock-review为36项测试对应的离线10例复验；review-live为3组独立真实变体（2通过、1服务429未完成）。二者不覆盖原始证据，不混入原10例验收汇总。详见../docs/06-submission-review.md。

@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "answer": "员工应在费用发生后45天内提交报销申请。报销申请需附发票及费用明细。[D01:S01]",
+  "citations": [
+    {
+      "doc_id": "D01",
+      "version_date": "2026-01-01",
+      "section_id": "S01",
+      "quote": "员工应在费用发生后45天内提交报销申请。报销申请需附发票及费用明细。"
+    }
+  ],
+  "gaps": [],
+  "follow_up_question": ""
+}

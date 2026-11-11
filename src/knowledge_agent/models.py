@@ -67,6 +67,8 @@ class ChatModel:
                 raise ModelError("模型响应超过大小限制")
             body = json.loads(raw)
             choice = body["choices"][0]
+            if not isinstance(choice, dict):
+                raise ModelError("模型服务响应结构异常：choice必须为对象")
             self.last_metadata.update({"model": body.get("model", self.name),
                                        "request_id": body.get("id"), "usage": body.get("usage", {}),
                                        "finish_reason": choice.get("finish_reason")})

@@ -1,0 +1,30 @@
+{
+  "mode": "live",
+  "model": "glm-4.5-flash",
+  "total": 3,
+  "passed": 2,
+  "scope": "Independent review variants; one interrupted by HTTP 429; not part of the original ten-case aggregate.",
+  "cases": [
+    {
+      "case": "renamed_units",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "passed_status_check": true,
+      "answer": "差旅报销申请须在费用发生后7个工作日内提交，并附发票。[POL77:RULE7]"
+    },
+    {
+      "case": "renamed_conflict",
+      "expected_status": "needs_clarification",
+      "actual_status": "model_error",
+      "passed_status_check": false,
+      "answer": "模型HTTP错误 429；请检查服务、配额或配置"
+    },
+    {
+      "case": "related_outside",
+      "expected_status": "insufficient_evidence",
+      "actual_status": "insufficient_evidence",
+      "passed_status_check": true,
+      "answer": "根据现有资料，仅能确定员工应在费用发生后30天内提交报销申请[D01:S01]，但未找到关于报销申请提交后到账时间的规定。"
+    }
+  ]
+}

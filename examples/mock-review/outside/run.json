@@ -1,0 +1,111 @@
+{
+  "run_id": "7c336c2f-cf7a-456d-aa25-09abf7316a7c",
+  "started_at": "2026-11-11T09:38:38.822794+00:00",
+  "mode": "mock",
+  "model": "offline-rule-simulator-v1",
+  "input": {
+    "question": "员工宠物医疗保险的赔付比例是多少？",
+    "history": []
+  },
+  "knowledge_sha256": "4c41fa115131d565539526af720bdf1bb0d54d7414dc9cb26c006ebac90a6013",
+  "prompt_sha256": "0f22ef5dcfeb4484e5980f0cb05eac3c48fe6fc0c27996387ef3a2967099bdd9",
+  "limits": {
+    "max_steps": 10,
+    "max_tools": 8
+  },
+  "failure_injection": "none",
+  "trace": [
+    {
+      "step": 1,
+      "timestamp": "2026-11-11T09:38:38.822794+00:00",
+      "model_metadata": {
+        "simulation": true
+      },
+      "decision": {
+        "action": "search_documents",
+        "arguments": {
+          "query": "员工宠物医疗保险的赔付比例是多少？",
+          "limit": 8
+        },
+        "reason": "离线规则模拟：先检索问题主题。"
+      },
+      "observation": {
+        "ok": true,
+        "hits": [],
+        "total": 0,
+        "truncated": false,
+        "notice": "摘要仅用于发现资料，回答前必须读取原文；排序不代表制度优先级。"
+      },
+      "return_summary": {
+        "hits": [],
+        "total": 0,
+        "truncated": false
+      },
+      "next_action": "search_documents"
+    },
+    {
+      "step": 2,
+      "timestamp": "2026-11-11T09:38:38.822794+00:00",
+      "model_metadata": {
+        "simulation": true
+      },
+      "decision": {
+        "action": "search_documents",
+        "arguments": {
+          "query": "员工宠物医疗保险的赔付比例是多少？ 制度",
+          "limit": 8
+        },
+        "reason": "离线规则模拟：没有命中，补充检索。"
+      },
+      "observation": {
+        "ok": true,
+        "hits": [],
+        "total": 0,
+        "truncated": false,
+        "notice": "摘要仅用于发现资料，回答前必须读取原文；排序不代表制度优先级。"
+      },
+      "return_summary": {
+        "hits": [],
+        "total": 0,
+        "truncated": false
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "timestamp": "2026-11-11T09:38:38.823791+00:00",
+      "model_metadata": {
+        "simulation": true
+      },
+      "decision": {
+        "action": "finish",
+        "arguments": {
+          "status": "insufficient_evidence",
+          "answer": "当前资料没有足够依据回答此问题。",
+          "citations": [],
+          "gaps": [
+            "缺少相关制度或产品资料"
+          ],
+          "follow_up_question": ""
+        },
+        "reason": "离线规则模拟：按观察结果结束。"
+      },
+      "outcome": "accepted",
+      "next_action": "end"
+    }
+  ],
+  "result": {
+    "status": "insufficient_evidence",
+    "answer": "当前资料没有足够依据回答此问题。",
+    "citations": [],
+    "gaps": [
+      "缺少相关制度或产品资料"
+    ],
+    "follow_up_question": ""
+  },
+  "tool_calls": 2,
+  "model_calls": 3,
+  "finished_at": "2026-11-11T09:38:38.823791+00:00",
+  "elapsed_seconds": 0.0,
+  "case_id": "outside"
+}

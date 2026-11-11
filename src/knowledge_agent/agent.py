@@ -33,13 +33,14 @@ class Agent:
         self.model, self.tools, self.max_steps, self.max_tools = model, tools, max_steps, max_tools
 
     def run(self, question, history=None):
-        history = history or []
+        history = [] if history is None else history
         if not isinstance(question, str) or not 1 <= len(question.strip()) <= 2000:
             raise ValueError("问题必须为1至2000字符")
         if not isinstance(history, list) or len(history) > 12:
             raise ValueError("history必须为最多12条消息的数组")
         for item in history:
-            if not isinstance(item, dict) or set(item) != {"role", "content"} or item["role"] not in {"user", "assistant"}:
+            if (not isinstance(item, dict) or set(item) != {"role", "content"}
+                    or not isinstance(item["role"], str) or item["role"] not in {"user", "assistant"}):
                 raise ValueError("历史消息必须包含user/assistant角色和content")
             if not isinstance(item["content"], str) or len(item["content"]) > 2000:
                 raise ValueError("历史消息最多2000字符")
