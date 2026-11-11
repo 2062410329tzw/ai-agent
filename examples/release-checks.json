@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-11-11T17:22:32.702291+08:00",
+  "tests": {
+    "tests": 31,
+    "failures": 0,
+    "errors": 0,
+    "successful": true,
+    "python": "3.10.1"
+  },
+  "latest_live_cases_replayed_against_current_tools": 10,
+  "broken_documentation_links": [],
+  "configured_secret_values_found": false,
+  "files_scanned": 583,
+  "build_elapsed_minutes": 46.7,
+  "source_sha256": {
+    "src/knowledge_agent/__init__.py": "9d1867f24f59ea769803351733fffcb1f52b3d2a57fd3bb38cd5da21b2263eac",
+    "src/knowledge_agent/agent.py": "e4cfe89e36d9a10b33ccbe18a6077dafb5a09ca0bb4d26a5945bd32a988acf53",
+    "src/knowledge_agent/cli.py": "acc22b2f46fccbaeec67247f5c9063413e1e5747273973a06fbd5a0c0851dbea",
+    "src/knowledge_agent/evaluation.py": "100ae9b0e3970b8959da205b07ec3e0b91f1078d57dff25bd49f5500ccbc7e50",
+    "src/knowledge_agent/models.py": "a88f71c529e2c3a580f91509f34873480ea3964a7b2425db9f38269d516a8e45",
+    "src/knowledge_agent/prompts.py": "a0c63629e557cda236e3803fe079fa7917370ee899f61e244d8f03dde4c31e17",
+    "src/knowledge_agent/tools.py": "f2f8395faf7e1023ca67dfc929bc822ef971b7fa93aeef5deaca358625c13aaa",
+    "src/knowledge_agent/validation.py": "5e8c7f1f11340ebf95681d1d504e1c62762e0526343b1bca3ae2d53273e45c1c"
+  }
+}

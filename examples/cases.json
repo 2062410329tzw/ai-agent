@@ -1,0 +1,12 @@
+[
+  {"id":"normal","question":"报销期限多久？","exclude_docs":["D02"],"expected_status":"completed","required_citations":["D01"],"answer_contains":["30"],"covers":["明确答案"]},
+  {"id":"conflict","question":"报销期限多久？","expected_status":"needs_clarification","required_citations":["D01","D02"],"answer_contains":["30","15"],"min_searches":2,"covers":["文档冲突","补充查证"]},
+  {"id":"outside","question":"员工宠物医疗保险的赔付比例是多少？","expected_status":"insufficient_evidence","required_citations":[],"covers":["资料外问题","资料不足"]},
+  {"id":"paraphrase","question":"发票最晚啥时候交，报账能拖多少天？","exclude_docs":["D02"],"expected_status":"completed","required_citations":["D01"],"answer_contains":["30"],"covers":["改写后的相似问题"]},
+  {"id":"followup","question":"那需要谁审批？","history":[{"role":"user","content":"请假要提前多久申请？"},{"role":"assistant","content":"请假须提前2个工作日在OA提交申请。"}],"expected_status":"completed","required_citations":["D03"],"answer_contains":["直属主管","部门负责人"],"covers":["上下文追问"]},
+  {"id":"tool_recovery","question":"报销期限多久？","exclude_docs":["D02"],"failure":"search_once","expected_status":"completed","required_citations":["D01"],"answer_contains":["30"],"requires_failure":true,"covers":["工具失败","模型根据错误调整动作"]},
+  {"id":"tool_failure","question":"报销期限多久？","failure":"search_always","expected_status":"tool_error","required_citations":[],"requires_failure":true,"covers":["工具持续失败"]},
+  {"id":"mutation","question":"报销期限多久？","exclude_docs":["D02"],"replace_text":{"doc_id":"D01","old":"30天","new":"45天"},"expected_status":"completed","required_citations":["D01"],"answer_contains":["45"],"answer_excludes":["30天"],"covers":["替换文档内容改变答案"]},
+  {"id":"step_limit","question":"报销期限多久？","max_steps":1,"expected_status":"max_steps_exceeded","required_citations":[],"covers":["执行上限"]},
+  {"id":"read_recovery","question":"请假怎么申请，需要谁审批？","failure":"read_once","expected_status":"completed","required_citations":["D03"],"answer_contains":["直属主管"],"requires_failure":true,"covers":["原文读取工具失败"]}
+]

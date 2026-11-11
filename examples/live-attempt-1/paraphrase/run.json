@@ -1,0 +1,39 @@
+{
+  "run_id": "6afcb37f-fe23-4314-8efb-29b521453296",
+  "started_at": "2026-11-11T08:45:28.517148+00:00",
+  "mode": "live",
+  "model": "glm-4.7-flash",
+  "input": {
+    "question": "发票最晚啥时候交，报账能拖多少天？",
+    "history": []
+  },
+  "knowledge_sha256": "c848d1230d5bdb05fc5e6385a0c61c9b2e6c35df2f15bde1444235178a1d72e0",
+  "prompt_sha256": "6ff71e6429f5fa9bd93918785e74ef6ff162ce986095b7daebeb02a848808780",
+  "limits": {
+    "max_steps": 10,
+    "max_tools": 8
+  },
+  "failure_injection": "none",
+  "trace": [
+    {
+      "step": 1,
+      "timestamp": "2026-11-11T08:45:28.517148+00:00",
+      "model_error": "模型网络错误或超时",
+      "next_action": "end"
+    }
+  ],
+  "result": {
+    "status": "model_error",
+    "answer": "模型网络错误或超时",
+    "citations": [],
+    "gaps": [
+      "模型网络错误或超时"
+    ],
+    "follow_up_question": ""
+  },
+  "tool_calls": 0,
+  "model_calls": 1,
+  "finished_at": "2026-11-11T08:45:30.605709+00:00",
+  "elapsed_seconds": 2.094,
+  "case_id": "paraphrase"
+}

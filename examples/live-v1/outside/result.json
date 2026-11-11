@@ -1,0 +1,9 @@
+{
+  "status": "insufficient_evidence",
+  "answer": "未能在企业制度文档中找到关于员工宠物医疗保险赔付比例的相关信息",
+  "citations": [],
+  "gaps": [
+    "企业制度文档中未包含宠物医疗保险相关内容"
+  ],
+  "follow_up_question": ""
+}

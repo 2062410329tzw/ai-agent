@@ -1,0 +1,9 @@
+{
+  "status": "max_steps_exceeded",
+  "answer": "模型决策轮数已达到上限，任务未完成。",
+  "citations": [],
+  "gaps": [
+    "模型决策轮数已达到上限，任务未完成。"
+  ],
+  "follow_up_question": ""
+}

@@ -1,0 +1,42 @@
+{
+  "run_id": "8c38a5ca-343b-4098-af84-2242d0e0c139",
+  "started_at": "2026-11-11T09:14:57.586376+00:00",
+  "mode": "live",
+  "model": "glm-4.5-flash",
+  "input": {
+    "question": "报销期限多久？",
+    "history": []
+  },
+  "knowledge_sha256": "d71202744e3a955ef7a361e1b9327dd2a3a813ffacb600adca31e7aa2079904b",
+  "prompt_sha256": "0f22ef5dcfeb4484e5980f0cb05eac3c48fe6fc0c27996387ef3a2967099bdd9",
+  "limits": {
+    "max_steps": 10,
+    "max_tools": 8
+  },
+  "failure_injection": "none",
+  "trace": [
+    {
+      "step": 1,
+      "timestamp": "2026-11-11T09:14:57.586376+00:00",
+      "model_metadata": {
+        "requested_model": "glm-4.5-flash"
+      },
+      "model_error": "模型网络错误或超时",
+      "next_action": "end"
+    }
+  ],
+  "result": {
+    "status": "model_error",
+    "answer": "模型网络错误或超时",
+    "citations": [],
+    "gaps": [
+      "模型网络错误或超时"
+    ],
+    "follow_up_question": ""
+  },
+  "tool_calls": 0,
+  "model_calls": 1,
+  "finished_at": "2026-11-11T09:16:02.336368+00:00",
+  "elapsed_seconds": 64.75,
+  "case_id": "mutation"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "tool_error",
+  "answer": "检索工具持续不可用，无法获取报销期限相关信息",
+  "citations": [],
+  "gaps": [
+    "无法访问企业制度文档"
+  ],
+  "follow_up_question": ""
+}

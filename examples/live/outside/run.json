@@ -1,0 +1,81 @@
+{
+  "run_id": "e1e9f6bd-679d-4fb5-bac5-cbc68a3ff4d7",
+  "started_at": "2026-11-11T08:46:09.952101+00:00",
+  "mode": "live",
+  "model": "glm-4.7-flash",
+  "input": {
+    "question": "员工宠物医疗保险的赔付比例是多少？",
+    "history": []
+  },
+  "knowledge_sha256": "4c41fa115131d565539526af720bdf1bb0d54d7414dc9cb26c006ebac90a6013",
+  "prompt_sha256": "6ff71e6429f5fa9bd93918785e74ef6ff162ce986095b7daebeb02a848808780",
+  "limits": {
+    "max_steps": 10,
+    "max_tools": 8
+  },
+  "failure_injection": "none",
+  "trace": [
+    {
+      "step": 1,
+      "timestamp": "2026-11-11T08:46:09.952101+00:00",
+      "model_metadata": {
+        "requested_model": "glm-4.7-flash",
+        "model": "glm-4.7-flash",
+        "request_id": "202611111646144d121e70810f44d1",
+        "usage": {
+          "completion_tokens": 59,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 633,
+          "prompt_tokens_details": {
+            "cached_tokens": 55
+          },
+          "total_tokens": 692
+        },
+        "finish_reason": "stop"
+      },
+      "decision": {
+        "action": "search_documents",
+        "arguments": {
+          "query": "宠物医疗保险 赔付比例",
+          "limit": 8
+        },
+        "reason": "检索员工福利制度中关于宠物医疗保险的具体赔付条款"
+      },
+      "observation": {
+        "ok": true,
+        "hits": [],
+        "total": 0,
+        "truncated": false,
+        "notice": "摘要仅用于发现资料，回答前必须读取原文；排序不代表制度优先级。"
+      },
+      "return_summary": {
+        "hits": [],
+        "total": 0,
+        "truncated": false
+      },
+      "next_action": "model_or_validation_error"
+    },
+    {
+      "step": 2,
+      "timestamp": "2026-11-11T08:46:16.033716+00:00",
+      "model_error": "模型HTTP错误 429；请检查服务、配额或配置",
+      "next_action": "end"
+    }
+  ],
+  "result": {
+    "status": "model_error",
+    "answer": "模型HTTP错误 429；请检查服务、配额或配置",
+    "citations": [],
+    "gaps": [
+      "模型HTTP错误 429；请检查服务、配额或配置"
+    ],
+    "follow_up_question": ""
+  },
+  "tool_calls": 1,
+  "model_calls": 2,
+  "finished_at": "2026-11-11T08:46:21.660970+00:00",
+  "elapsed_seconds": 11.719,
+  "case_id": "outside"
+}

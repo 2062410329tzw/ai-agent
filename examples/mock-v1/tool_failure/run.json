@@ -1,0 +1,113 @@
+{
+  "run_id": "d31025d4-f19e-4574-8036-6be2c954b0ef",
+  "started_at": "2026-11-11T09:07:00.752822+00:00",
+  "mode": "mock",
+  "model": "offline-rule-simulator-v1",
+  "input": {
+    "question": "报销期限多久？",
+    "history": []
+  },
+  "knowledge_sha256": "4c41fa115131d565539526af720bdf1bb0d54d7414dc9cb26c006ebac90a6013",
+  "prompt_sha256": "0f22ef5dcfeb4484e5980f0cb05eac3c48fe6fc0c27996387ef3a2967099bdd9",
+  "limits": {
+    "max_steps": 10,
+    "max_tools": 8
+  },
+  "failure_injection": "search_always",
+  "trace": [
+    {
+      "step": 1,
+      "timestamp": "2026-11-11T09:07:00.752822+00:00",
+      "model_metadata": {
+        "simulation": true
+      },
+      "decision": {
+        "action": "search_documents",
+        "arguments": {
+          "query": "报销",
+          "limit": 8
+        },
+        "reason": "离线规则模拟：先检索问题主题。"
+      },
+      "observation": {
+        "ok": false,
+        "error": {
+          "code": "TEMPORARY_UNAVAILABLE",
+          "retryable": true,
+          "message": "合成故障：工具暂不可用。这不是无检索结果。"
+        }
+      },
+      "return_summary": {
+        "code": "TEMPORARY_UNAVAILABLE",
+        "retryable": true,
+        "message": "合成故障：工具暂不可用。这不是无检索结果。"
+      },
+      "next_action": "search_documents"
+    },
+    {
+      "step": 2,
+      "timestamp": "2026-11-11T09:07:00.753819+00:00",
+      "model_metadata": {
+        "simulation": true
+      },
+      "decision": {
+        "action": "search_documents",
+        "arguments": {
+          "query": "报销",
+          "limit": 8
+        },
+        "reason": "离线规则模拟：观察到工具错误，重试一次。"
+      },
+      "observation": {
+        "ok": false,
+        "error": {
+          "code": "TEMPORARY_UNAVAILABLE",
+          "retryable": true,
+          "message": "合成故障：工具暂不可用。这不是无检索结果。"
+        }
+      },
+      "return_summary": {
+        "code": "TEMPORARY_UNAVAILABLE",
+        "retryable": true,
+        "message": "合成故障：工具暂不可用。这不是无检索结果。"
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "timestamp": "2026-11-11T09:07:00.753819+00:00",
+      "model_metadata": {
+        "simulation": true
+      },
+      "decision": {
+        "action": "finish",
+        "arguments": {
+          "status": "tool_error",
+          "answer": "工具持续不可用，无法完成查证。",
+          "citations": [],
+          "gaps": [
+            "工具调用失败"
+          ],
+          "follow_up_question": ""
+        },
+        "reason": "离线规则模拟：按观察结果结束。"
+      },
+      "outcome": "accepted",
+      "next_action": "end"
+    }
+  ],
+  "result": {
+    "status": "tool_error",
+    "answer": "工具持续不可用，无法完成查证。",
+    "citations": [],
+    "gaps": [
+      "工具调用失败"
+    ],
+    "follow_up_question": ""
+  },
+  "tool_calls": 2,
+  "model_calls": 3,
+  "finished_at": "2026-11-11T09:07:00.753819+00:00",
+  "elapsed_seconds": 0.0,
+  "case_id": "tool_failure"
+}

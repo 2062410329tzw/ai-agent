@@ -1,0 +1,9 @@
+{
+  "status": "tool_error",
+  "answer": "工具持续不可用，无法完成查证。",
+  "citations": [],
+  "gaps": [
+    "工具调用失败"
+  ],
+  "follow_up_question": ""
+}

@@ -1,0 +1,199 @@
+{
+  "created_at": "2026-11-11T09:07:00.704844+00:00",
+  "python": "3.10.1",
+  "total": 10,
+  "passed": 10,
+  "scope": "固定合成用例的自动断言；不等同于一般语义准确率或候选人个人复核",
+  "cases": [
+    {
+      "id": "normal",
+      "passed": true,
+      "status": "completed",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true
+      },
+      "run": "normal/run.json",
+      "covers": [
+        "明确答案"
+      ]
+    },
+    {
+      "id": "conflict",
+      "passed": true,
+      "status": "needs_clarification",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true,
+        "checked_after_reading_both": true,
+        "asks_for_scope": true
+      },
+      "run": "conflict/run.json",
+      "covers": [
+        "文档冲突",
+        "补充查证"
+      ]
+    },
+    {
+      "id": "outside",
+      "passed": true,
+      "status": "insufficient_evidence",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true
+      },
+      "run": "outside/run.json",
+      "covers": [
+        "资料外问题",
+        "资料不足"
+      ]
+    },
+    {
+      "id": "paraphrase",
+      "passed": true,
+      "status": "completed",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true
+      },
+      "run": "paraphrase/run.json",
+      "covers": [
+        "改写后的相似问题"
+      ]
+    },
+    {
+      "id": "followup",
+      "passed": true,
+      "status": "completed",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true
+      },
+      "run": "followup/run.json",
+      "covers": [
+        "上下文追问"
+      ]
+    },
+    {
+      "id": "tool_recovery",
+      "passed": true,
+      "status": "completed",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true,
+        "observed_failure_then_decided": true
+      },
+      "run": "tool_recovery/run.json",
+      "covers": [
+        "工具失败",
+        "模型根据错误调整动作"
+      ]
+    },
+    {
+      "id": "tool_failure",
+      "passed": true,
+      "status": "tool_error",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true,
+        "observed_failure_then_decided": true
+      },
+      "run": "tool_failure/run.json",
+      "covers": [
+        "工具持续失败"
+      ]
+    },
+    {
+      "id": "mutation",
+      "passed": true,
+      "status": "completed",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true
+      },
+      "run": "mutation/run.json",
+      "covers": [
+        "替换文档内容改变答案"
+      ]
+    },
+    {
+      "id": "step_limit",
+      "passed": true,
+      "status": "max_steps_exceeded",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true
+      },
+      "run": "step_limit/run.json",
+      "covers": [
+        "执行上限"
+      ]
+    },
+    {
+      "id": "read_recovery",
+      "passed": true,
+      "status": "completed",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true,
+        "observed_failure_then_decided": true
+      },
+      "run": "read_recovery/run.json",
+      "covers": [
+        "原文读取工具失败"
+      ]
+    }
+  ],
+  "mode": "mock",
+  "model": "offline-rule-simulator-v1"
+}

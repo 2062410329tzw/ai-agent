@@ -1,0 +1,102 @@
+{
+  "run_id": "fb225973-3200-401d-beb5-6abd00a7d1cb",
+  "started_at": "2026-11-11T08:46:26.502088+00:00",
+  "mode": "live",
+  "model": "glm-4.7-flash",
+  "input": {
+    "question": "那需要谁审批？",
+    "history": [
+      {
+        "role": "user",
+        "content": "请假要提前多久申请？"
+      },
+      {
+        "role": "assistant",
+        "content": "请假须提前2个工作日在OA提交申请。"
+      }
+    ]
+  },
+  "knowledge_sha256": "4c41fa115131d565539526af720bdf1bb0d54d7414dc9cb26c006ebac90a6013",
+  "prompt_sha256": "6ff71e6429f5fa9bd93918785e74ef6ff162ce986095b7daebeb02a848808780",
+  "limits": {
+    "max_steps": 10,
+    "max_tools": 8
+  },
+  "failure_injection": "none",
+  "trace": [
+    {
+      "step": 1,
+      "timestamp": "2026-11-11T08:46:26.502088+00:00",
+      "model_metadata": {
+        "requested_model": "glm-4.7-flash",
+        "model": "glm-4.7-flash",
+        "request_id": "20261111164631897fec65eb7d4b8d",
+        "usage": {
+          "completion_tokens": 60,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 667,
+          "prompt_tokens_details": {
+            "cached_tokens": 616
+          },
+          "total_tokens": 727
+        },
+        "finish_reason": "stop"
+      },
+      "decision": {
+        "action": "search_documents",
+        "arguments": {
+          "query": "请假 审批 流程",
+          "limit": 8
+        },
+        "reason": "用户询问请假审批人，需检索制度原文确认审批层级"
+      },
+      "observation": {
+        "ok": true,
+        "hits": [
+          {
+            "doc_id": "D03",
+            "version_date": "2026-03-01",
+            "title": "员工请假流程",
+            "section_id": "S01",
+            "topic": "请假",
+            "score": 11,
+            "preview": "员工请假须提前2个工作日在OA提交申请。请假不超过3天由直属主管审批，超过3天还须部门负责人审批。"
+          }
+        ],
+        "total": 1,
+        "truncated": false,
+        "notice": "摘要仅用于发现资料，回答前必须读取原文；排序不代表制度优先级。"
+      },
+      "return_summary": {
+        "hits": [
+          "D03:S01"
+        ],
+        "total": 1,
+        "truncated": false
+      },
+      "next_action": "model_or_validation_error"
+    },
+    {
+      "step": 2,
+      "timestamp": "2026-11-11T08:46:32.799869+00:00",
+      "model_error": "模型HTTP错误 429；请检查服务、配额或配置",
+      "next_action": "end"
+    }
+  ],
+  "result": {
+    "status": "model_error",
+    "answer": "模型HTTP错误 429；请检查服务、配额或配置",
+    "citations": [],
+    "gaps": [
+      "模型HTTP错误 429；请检查服务、配额或配置"
+    ],
+    "follow_up_question": ""
+  },
+  "tool_calls": 1,
+  "model_calls": 2,
+  "finished_at": "2026-11-11T08:46:37.579958+00:00",
+  "elapsed_seconds": 11.078,
+  "case_id": "followup"
+}

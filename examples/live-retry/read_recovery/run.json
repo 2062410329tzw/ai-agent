@@ -1,0 +1,212 @@
+{
+  "run_id": "179b06d0-bb6c-43db-ba37-2cf32992818e",
+  "started_at": "2026-11-11T09:05:35.545185+00:00",
+  "mode": "live",
+  "model": "glm-4.5-flash",
+  "input": {
+    "question": "请假怎么申请，需要谁审批？",
+    "history": []
+  },
+  "knowledge_sha256": "4c41fa115131d565539526af720bdf1bb0d54d7414dc9cb26c006ebac90a6013",
+  "prompt_sha256": "bbfbcca944f29a8761e0a1181dd8adc1381dc7a533f4110a6812a41f53ae083b",
+  "limits": {
+    "max_steps": 10,
+    "max_tools": 8
+  },
+  "failure_injection": "read_once",
+  "trace": [
+    {
+      "step": 1,
+      "timestamp": "2026-11-11T09:05:35.545185+00:00",
+      "model_metadata": {
+        "requested_model": "glm-4.5-flash",
+        "model": "glm-4.5-flash",
+        "request_id": "202611111705409197ed0714e54140",
+        "usage": {
+          "completion_tokens": 57,
+          "prompt_tokens": 712,
+          "prompt_tokens_details": {
+            "cached_tokens": 711
+          },
+          "total_tokens": 769
+        },
+        "finish_reason": "stop"
+      },
+      "decision": {
+        "action": "search_documents",
+        "arguments": {
+          "query": "请假申请流程审批",
+          "limit": 8
+        },
+        "reason": "需要查找关于请假申请流程和审批权限的企业制度规定"
+      },
+      "observation": {
+        "ok": true,
+        "hits": [
+          {
+            "doc_id": "D03",
+            "version_date": "2026-03-01",
+            "title": "员工请假流程",
+            "section_id": "S01",
+            "topic": "请假",
+            "score": 11,
+            "preview": "员工请假须提前2个工作日在OA提交申请。请假不超过3天由直属主管审批，超过3天还须部门负责人审批。"
+          }
+        ],
+        "total": 1,
+        "truncated": false,
+        "notice": "摘要仅用于发现资料，回答前必须读取原文；排序不代表制度优先级。"
+      },
+      "return_summary": {
+        "hits": [
+          "D03:S01"
+        ],
+        "total": 1,
+        "truncated": false
+      },
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "timestamp": "2026-11-11T09:05:49.704540+00:00",
+      "model_metadata": {
+        "requested_model": "glm-4.5-flash",
+        "model": "glm-4.5-flash",
+        "request_id": "20261111170554b05ed7666da14e62",
+        "usage": {
+          "completion_tokens": 43,
+          "prompt_tokens": 936,
+          "prompt_tokens_details": {
+            "cached_tokens": 753
+          },
+          "total_tokens": 979
+        },
+        "finish_reason": "stop"
+      },
+      "decision": {
+        "action": "read_document",
+        "arguments": {
+          "doc_id": "D03",
+          "section_id": "S01"
+        },
+        "reason": "需要获取完整的请假申请流程和审批权限规定"
+      },
+      "observation": {
+        "ok": false,
+        "error": {
+          "code": "TEMPORARY_UNAVAILABLE",
+          "retryable": true,
+          "message": "合成故障：工具暂不可用。这不是无检索结果。"
+        }
+      },
+      "return_summary": {
+        "code": "TEMPORARY_UNAVAILABLE",
+        "retryable": true,
+        "message": "合成故障：工具暂不可用。这不是无检索结果。"
+      },
+      "next_action": "read_document"
+    },
+    {
+      "step": 3,
+      "timestamp": "2026-11-11T09:05:56.106276+00:00",
+      "model_metadata": {
+        "requested_model": "glm-4.5-flash",
+        "model": "glm-4.5-flash",
+        "request_id": "20261111170600c9249f7615ba468d",
+        "usage": {
+          "completion_tokens": 45,
+          "prompt_tokens": 1076,
+          "prompt_tokens_details": {
+            "cached_tokens": 978
+          },
+          "total_tokens": 1121
+        },
+        "finish_reason": "stop"
+      },
+      "decision": {
+        "action": "read_document",
+        "arguments": {
+          "doc_id": "D03",
+          "section_id": "S01"
+        },
+        "reason": "重试获取请假申请流程和审批权限的完整规定"
+      },
+      "observation": {
+        "ok": true,
+        "document": {
+          "doc_id": "D03",
+          "version_date": "2026-03-01",
+          "title": "员工请假流程",
+          "topic": "请假",
+          "scope": "全体员工",
+          "supersedes": null,
+          "section_id": "S01",
+          "text": "员工请假须提前2个工作日在OA提交申请。请假不超过3天由直属主管审批，超过3天还须部门负责人审批。"
+        }
+      },
+      "return_summary": {
+        "doc_id": "D03",
+        "section_id": "S01",
+        "text": "员工请假须提前2个工作日在OA提交申请。请假不超过3天由直属主管审批，超过3天还须部门负责人审批。"
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 4,
+      "timestamp": "2026-11-11T09:06:04.381827+00:00",
+      "model_metadata": {
+        "requested_model": "glm-4.5-flash",
+        "model": "glm-4.5-flash",
+        "request_id": "202611111706097d457381d2dc4138",
+        "usage": {
+          "completion_tokens": 149,
+          "prompt_tokens": 1274,
+          "prompt_tokens_details": {
+            "cached_tokens": 1120
+          },
+          "total_tokens": 1423
+        },
+        "finish_reason": "stop"
+      },
+      "decision": {
+        "action": "finish",
+        "arguments": {
+          "status": "completed",
+          "answer": "员工请假须提前2个工作日在OA提交申请。请假不超过3天由直属主管审批，超过3天还须部门负责人审批。[D03:S01]",
+          "citations": [
+            {
+              "doc_id": "D03",
+              "version_date": "2026-03-01",
+              "section_id": "S01",
+              "quote": "员工请假须提前2个工作日在OA提交申请。请假不超过3天由直属主管审批，超过3天还须部门负责人审批。"
+            }
+          ],
+          "gaps": [],
+          "follow_up_question": ""
+        },
+        "reason": "已获取完整的请假申请流程和审批权限规定"
+      },
+      "outcome": "accepted",
+      "next_action": "end"
+    }
+  ],
+  "result": {
+    "status": "completed",
+    "answer": "员工请假须提前2个工作日在OA提交申请。请假不超过3天由直属主管审批，超过3天还须部门负责人审批。[D03:S01]",
+    "citations": [
+      {
+        "doc_id": "D03",
+        "version_date": "2026-03-01",
+        "section_id": "S01",
+        "quote": "员工请假须提前2个工作日在OA提交申请。请假不超过3天由直属主管审批，超过3天还须部门负责人审批。"
+      }
+    ],
+    "gaps": [],
+    "follow_up_question": ""
+  },
+  "tool_calls": 3,
+  "model_calls": 4,
+  "finished_at": "2026-11-11T09:06:18.660306+00:00",
+  "elapsed_seconds": 43.125,
+  "case_id": "read_recovery"
+}

@@ -1,0 +1,50 @@
+{
+  "created_at": "2026-11-11T08:48:25.232525+00:00",
+  "python": "3.10.1",
+  "total": 2,
+  "passed": 1,
+  "scope": "固定合成用例的自动断言；不等同于一般语义准确率或候选人个人复核",
+  "cases": [
+    {
+      "id": "normal",
+      "passed": true,
+      "status": "completed",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true
+      },
+      "run": "normal/run.json",
+      "covers": [
+        "明确答案"
+      ]
+    },
+    {
+      "id": "conflict",
+      "passed": false,
+      "status": "max_steps_exceeded",
+      "checks": {
+        "status": false,
+        "required_citations": false,
+        "answer_contains": false,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": false,
+        "checked_after_reading_both": false,
+        "asks_for_scope": false
+      },
+      "run": "conflict/run.json",
+      "covers": [
+        "文档冲突",
+        "补充查证"
+      ]
+    }
+  ],
+  "mode": "live",
+  "model": "glm-4-flash-250414"
+}

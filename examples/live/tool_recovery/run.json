@@ -1,0 +1,39 @@
+{
+  "run_id": "296e8d65-9c41-47d6-86f1-a52c0d693b5e",
+  "started_at": "2026-11-11T08:46:37.588912+00:00",
+  "mode": "live",
+  "model": "glm-4.7-flash",
+  "input": {
+    "question": "报销期限多久？",
+    "history": []
+  },
+  "knowledge_sha256": "c848d1230d5bdb05fc5e6385a0c61c9b2e6c35df2f15bde1444235178a1d72e0",
+  "prompt_sha256": "6ff71e6429f5fa9bd93918785e74ef6ff162ce986095b7daebeb02a848808780",
+  "limits": {
+    "max_steps": 10,
+    "max_tools": 8
+  },
+  "failure_injection": "search_once",
+  "trace": [
+    {
+      "step": 1,
+      "timestamp": "2026-11-11T08:46:37.588912+00:00",
+      "model_error": "模型HTTP错误 429；请检查服务、配额或配置",
+      "next_action": "end"
+    }
+  ],
+  "result": {
+    "status": "model_error",
+    "answer": "模型HTTP错误 429；请检查服务、配额或配置",
+    "citations": [],
+    "gaps": [
+      "模型HTTP错误 429；请检查服务、配额或配置"
+    ],
+    "follow_up_question": ""
+  },
+  "tool_calls": 0,
+  "model_calls": 1,
+  "finished_at": "2026-11-11T08:46:42.428966+00:00",
+  "elapsed_seconds": 4.844,
+  "case_id": "tool_recovery"
+}

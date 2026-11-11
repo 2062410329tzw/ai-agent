@@ -1,0 +1,85 @@
+{
+  "created_at": "2026-11-11T09:18:00.988381+00:00",
+  "python": "3.10.1",
+  "total": 4,
+  "passed": 4,
+  "scope": "固定合成用例的自动断言；不等同于一般语义准确率或候选人个人复核",
+  "cases": [
+    {
+      "id": "followup",
+      "passed": true,
+      "status": "completed",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true
+      },
+      "run": "followup/run.json",
+      "covers": [
+        "上下文追问"
+      ]
+    },
+    {
+      "id": "tool_failure",
+      "passed": true,
+      "status": "tool_error",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true,
+        "observed_failure_then_decided": true
+      },
+      "run": "tool_failure/run.json",
+      "covers": [
+        "工具持续失败"
+      ]
+    },
+    {
+      "id": "mutation",
+      "passed": true,
+      "status": "completed",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true
+      },
+      "run": "mutation/run.json",
+      "covers": [
+        "替换文档内容改变答案"
+      ]
+    },
+    {
+      "id": "read_recovery",
+      "passed": true,
+      "status": "completed",
+      "checks": {
+        "status": true,
+        "required_citations": true,
+        "answer_contains": true,
+        "answer_excludes": true,
+        "bounded": true,
+        "citation_integrity": true,
+        "supplementary_search": true,
+        "observed_failure_then_decided": true
+      },
+      "run": "read_recovery/run.json",
+      "covers": [
+        "原文读取工具失败"
+      ]
+    }
+  ],
+  "mode": "live",
+  "model": "glm-4-flash-250414"
+}

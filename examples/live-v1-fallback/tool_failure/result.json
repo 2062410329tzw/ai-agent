@@ -1,0 +1,9 @@
+{
+  "status": "tool_error",
+  "answer": "由于工具持续不可用，无法检索到相关制度信息以回答用户的问题。",
+  "citations": [],
+  "gaps": [
+    "报销期限的具体规定"
+  ],
+  "follow_up_question": "是否有其他问题我可以帮助您？"
+}

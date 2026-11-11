@@ -1,0 +1,249 @@
+{
+  "run_id": "3aa7bfb3-51d1-4407-bdee-abe1d368bc23",
+  "started_at": "2026-11-11T08:45:05.889397+00:00",
+  "mode": "mock",
+  "model": "offline-rule-simulator-v1",
+  "input": {
+    "question": "报销期限多久？",
+    "history": []
+  },
+  "knowledge_sha256": "4c41fa115131d565539526af720bdf1bb0d54d7414dc9cb26c006ebac90a6013",
+  "prompt_sha256": "6ff71e6429f5fa9bd93918785e74ef6ff162ce986095b7daebeb02a848808780",
+  "limits": {
+    "max_steps": 10,
+    "max_tools": 8
+  },
+  "failure_injection": "none",
+  "trace": [
+    {
+      "step": 1,
+      "timestamp": "2026-11-11T08:45:05.889397+00:00",
+      "model_metadata": {
+        "simulation": true
+      },
+      "decision": {
+        "action": "search_documents",
+        "arguments": {
+          "query": "报销",
+          "limit": 8
+        },
+        "reason": "离线规则模拟：先检索问题主题。"
+      },
+      "observation": {
+        "ok": true,
+        "hits": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-01",
+            "title": "费用报销制度A",
+            "section_id": "S01",
+            "topic": "报销",
+            "score": 9,
+            "preview": "员工应在费用发生后30天内提交报销申请。报销申请需附发票及费用明细。"
+          },
+          {
+            "doc_id": "D02",
+            "version_date": "2026-02-01",
+            "title": "费用报销制度B",
+            "section_id": "S01",
+            "topic": "报销",
+            "score": 9,
+            "preview": "员工应在费用发生后15天内提交报销申请。报销申请需附发票及费用明细。"
+          }
+        ],
+        "total": 2,
+        "truncated": false,
+        "notice": "摘要仅用于发现资料，回答前必须读取原文；排序不代表制度优先级。"
+      },
+      "return_summary": {
+        "hits": [
+          "D01:S01",
+          "D02:S01"
+        ],
+        "total": 2,
+        "truncated": false
+      },
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "timestamp": "2026-11-11T08:45:05.890406+00:00",
+      "model_metadata": {
+        "simulation": true
+      },
+      "decision": {
+        "action": "read_document",
+        "arguments": {
+          "doc_id": "D01",
+          "section_id": "S01"
+        },
+        "reason": "离线规则模拟：读取尚未读取的同主题片段。"
+      },
+      "observation": {
+        "ok": true,
+        "document": {
+          "doc_id": "D01",
+          "version_date": "2026-01-01",
+          "title": "费用报销制度A",
+          "topic": "报销",
+          "scope": null,
+          "supersedes": null,
+          "section_id": "S01",
+          "text": "员工应在费用发生后30天内提交报销申请。报销申请需附发票及费用明细。"
+        }
+      },
+      "return_summary": {
+        "doc_id": "D01",
+        "section_id": "S01",
+        "text": "员工应在费用发生后30天内提交报销申请。报销申请需附发票及费用明细。"
+      },
+      "next_action": "read_document"
+    },
+    {
+      "step": 3,
+      "timestamp": "2026-11-11T08:45:05.890406+00:00",
+      "model_metadata": {
+        "simulation": true
+      },
+      "decision": {
+        "action": "read_document",
+        "arguments": {
+          "doc_id": "D02",
+          "section_id": "S01"
+        },
+        "reason": "离线规则模拟：读取尚未读取的同主题片段。"
+      },
+      "observation": {
+        "ok": true,
+        "document": {
+          "doc_id": "D02",
+          "version_date": "2026-02-01",
+          "title": "费用报销制度B",
+          "topic": "报销",
+          "scope": null,
+          "supersedes": null,
+          "section_id": "S01",
+          "text": "员工应在费用发生后15天内提交报销申请。报销申请需附发票及费用明细。"
+        }
+      },
+      "return_summary": {
+        "doc_id": "D02",
+        "section_id": "S01",
+        "text": "员工应在费用发生后15天内提交报销申请。报销申请需附发票及费用明细。"
+      },
+      "next_action": "search_documents"
+    },
+    {
+      "step": 4,
+      "timestamp": "2026-11-11T08:45:05.890406+00:00",
+      "model_metadata": {
+        "simulation": true
+      },
+      "decision": {
+        "action": "search_documents",
+        "arguments": {
+          "query": "报销 适用范围 优先级 替代关系",
+          "limit": 8
+        },
+        "reason": "离线规则模拟：发现不同期限，补检索适用范围与优先级。"
+      },
+      "observation": {
+        "ok": true,
+        "hits": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-01",
+            "title": "费用报销制度A",
+            "section_id": "S01",
+            "topic": "报销",
+            "score": 9,
+            "preview": "员工应在费用发生后30天内提交报销申请。报销申请需附发票及费用明细。"
+          },
+          {
+            "doc_id": "D02",
+            "version_date": "2026-02-01",
+            "title": "费用报销制度B",
+            "section_id": "S01",
+            "topic": "报销",
+            "score": 9,
+            "preview": "员工应在费用发生后15天内提交报销申请。报销申请需附发票及费用明细。"
+          }
+        ],
+        "total": 2,
+        "truncated": false,
+        "notice": "摘要仅用于发现资料，回答前必须读取原文；排序不代表制度优先级。"
+      },
+      "return_summary": {
+        "hits": [
+          "D01:S01",
+          "D02:S01"
+        ],
+        "total": 2,
+        "truncated": false
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "timestamp": "2026-11-11T08:45:05.890406+00:00",
+      "model_metadata": {
+        "simulation": true
+      },
+      "decision": {
+        "action": "finish",
+        "arguments": {
+          "status": "needs_clarification",
+          "answer": "资料存在冲突，无法确定统一期限：\n员工应在费用发生后30天内提交报销申请。报销申请需附发票及费用明细。[D01:S01]\n员工应在费用发生后15天内提交报销申请。报销申请需附发票及费用明细。[D02:S01]",
+          "citations": [
+            {
+              "doc_id": "D01",
+              "version_date": "2026-01-01",
+              "section_id": "S01",
+              "quote": "员工应在费用发生后30天内提交报销申请。报销申请需附发票及费用明细。"
+            },
+            {
+              "doc_id": "D02",
+              "version_date": "2026-02-01",
+              "section_id": "S01",
+              "quote": "员工应在费用发生后15天内提交报销申请。报销申请需附发票及费用明细。"
+            }
+          ],
+          "gaps": [
+            "缺少明确适用范围或制度替代关系"
+          ],
+          "follow_up_question": "请确认适用制度或补充说明优先级的文件。"
+        },
+        "reason": "离线规则模拟：按观察结果结束。"
+      },
+      "outcome": "accepted",
+      "next_action": "end"
+    }
+  ],
+  "result": {
+    "status": "needs_clarification",
+    "answer": "资料存在冲突，无法确定统一期限：\n员工应在费用发生后30天内提交报销申请。报销申请需附发票及费用明细。[D01:S01]\n员工应在费用发生后15天内提交报销申请。报销申请需附发票及费用明细。[D02:S01]",
+    "citations": [
+      {
+        "doc_id": "D01",
+        "version_date": "2026-01-01",
+        "section_id": "S01",
+        "quote": "员工应在费用发生后30天内提交报销申请。报销申请需附发票及费用明细。"
+      },
+      {
+        "doc_id": "D02",
+        "version_date": "2026-02-01",
+        "section_id": "S01",
+        "quote": "员工应在费用发生后15天内提交报销申请。报销申请需附发票及费用明细。"
+      }
+    ],
+    "gaps": [
+      "缺少明确适用范围或制度替代关系"
+    ],
+    "follow_up_question": "请确认适用制度或补充说明优先级的文件。"
+  },
+  "tool_calls": 4,
+  "model_calls": 5,
+  "finished_at": "2026-11-11T08:45:05.890406+00:00",
+  "elapsed_seconds": 0.0,
+  "case_id": "conflict"
+}

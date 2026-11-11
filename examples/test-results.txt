@@ -1,0 +1,38 @@
+Python 3.10.1
+UTC 2026-11-11T09:08:19.713386+00:00
+test_different_observations_change_action_path (test_agent.AcceptanceTests) ... ok
+test_offline_acceptance_cases (test_agent.AcceptanceTests) ... ok
+test_empty_question_and_bad_limits (test_agent.LoopTests) ... ok
+test_invalid_output_is_budgeted (test_agent.LoopTests) ... ok
+test_model_failure_does_not_fall_back_to_mock (test_agent.LoopTests) ... ok
+test_rejected_citation_can_be_repaired_by_model (test_agent.LoopTests) ... ok
+test_tool_budget_does_not_execute_extra_call (test_agent.LoopTests) ... ok
+test_tool_result_reaches_next_model_call (test_agent.LoopTests) ... ok
+test_untrusted_history_cannot_set_system_role (test_agent.LoopTests) ... ok
+test_http_error_body_not_leaked (test_agent.ModelAdapterTests) ... ok
+test_insecure_endpoint_rejected (test_agent.ModelAdapterTests) ... ok
+test_missing_key_fails_explicitly (test_agent.ModelAdapterTests) ... ok
+test_payload_and_metadata_without_reasoning (test_agent.ModelAdapterTests) ... ok
+test_duplicate_ids_rejected (test_agent.ToolTests) ... ok
+test_explicit_topic_excludes_unrelated_workflows (test_agent.ToolTests) ... ok
+test_invalid_tool_arguments (test_agent.ToolTests) ... ok
+test_missing_document_is_not_evidence (test_agent.ToolTests) ... ok
+test_mutation_changes_fingerprint (test_agent.ToolTests) ... ok
+test_paraphrase_retains_both_conflicting_documents (test_agent.ToolTests) ... ok
+test_read_is_exact_and_detached (test_agent.ToolTests) ... ok
+test_search_reports_truncation (test_agent.ToolTests) ... ok
+test_stopwords_do_not_retrieve_unrelated_policy (test_agent.ToolTests) ... ok
+test_topic_filter_keeps_cross_topic_precedence_notice (test_agent.ToolTests) ... ok
+test_unknown_tool_blocked (test_agent.ToolTests) ... ok
+test_forged_quote_and_version_rejected (test_agent.ValidationTests) ... ok
+test_inline_citation_mismatch_rejected (test_agent.ValidationTests) ... ok
+test_success_without_citation_rejected (test_agent.ValidationTests) ... ok
+test_tool_failure_not_mislabeled_no_evidence (test_agent.ValidationTests) ... ok
+test_unknown_or_wrongly_typed_actions_rejected (test_agent.ValidationTests) ... ok
+test_unread_citation_rejected (test_agent.ValidationTests) ... ok
+test_valid_citation (test_agent.ValidationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.015s
+
+OK

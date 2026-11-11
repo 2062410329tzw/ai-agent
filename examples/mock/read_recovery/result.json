@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "answer": "员工请假须提前2个工作日在OA提交申请。请假不超过3天由直属主管审批，超过3天还须部门负责人审批。[D03:S01]",
+  "citations": [
+    {
+      "doc_id": "D03",
+      "version_date": "2026-03-01",
+      "section_id": "S01",
+      "quote": "员工请假须提前2个工作日在OA提交申请。请假不超过3天由直属主管审批，超过3天还须部门负责人审批。"
+    }
+  ],
+  "gaps": [],
+  "follow_up_question": ""
+}

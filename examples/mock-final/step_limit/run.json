@@ -1,0 +1,83 @@
+{
+  "run_id": "b1ad2612-5586-4d7a-9217-e798c8a639db",
+  "started_at": "2026-11-11T08:45:43.897573+00:00",
+  "mode": "mock",
+  "model": "offline-rule-simulator-v1",
+  "input": {
+    "question": "报销期限多久？",
+    "history": []
+  },
+  "knowledge_sha256": "4c41fa115131d565539526af720bdf1bb0d54d7414dc9cb26c006ebac90a6013",
+  "prompt_sha256": "6ff71e6429f5fa9bd93918785e74ef6ff162ce986095b7daebeb02a848808780",
+  "limits": {
+    "max_steps": 1,
+    "max_tools": 8
+  },
+  "failure_injection": "none",
+  "trace": [
+    {
+      "step": 1,
+      "timestamp": "2026-11-11T08:45:43.897573+00:00",
+      "model_metadata": {
+        "simulation": true
+      },
+      "decision": {
+        "action": "search_documents",
+        "arguments": {
+          "query": "报销",
+          "limit": 8
+        },
+        "reason": "离线规则模拟：先检索问题主题。"
+      },
+      "observation": {
+        "ok": true,
+        "hits": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-01",
+            "title": "费用报销制度A",
+            "section_id": "S01",
+            "topic": "报销",
+            "score": 9,
+            "preview": "员工应在费用发生后30天内提交报销申请。报销申请需附发票及费用明细。"
+          },
+          {
+            "doc_id": "D02",
+            "version_date": "2026-02-01",
+            "title": "费用报销制度B",
+            "section_id": "S01",
+            "topic": "报销",
+            "score": 9,
+            "preview": "员工应在费用发生后15天内提交报销申请。报销申请需附发票及费用明细。"
+          }
+        ],
+        "total": 2,
+        "truncated": false,
+        "notice": "摘要仅用于发现资料，回答前必须读取原文；排序不代表制度优先级。"
+      },
+      "return_summary": {
+        "hits": [
+          "D01:S01",
+          "D02:S01"
+        ],
+        "total": 2,
+        "truncated": false
+      },
+      "next_action": "end"
+    }
+  ],
+  "result": {
+    "status": "max_steps_exceeded",
+    "answer": "模型决策轮数已达到上限，任务未完成。",
+    "citations": [],
+    "gaps": [
+      "模型决策轮数已达到上限，任务未完成。"
+    ],
+    "follow_up_question": ""
+  },
+  "tool_calls": 1,
+  "model_calls": 1,
+  "finished_at": "2026-11-11T08:45:43.898571+00:00",
+  "elapsed_seconds": 0.0,
+  "case_id": "step_limit"
+}

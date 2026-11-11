@@ -1,0 +1,13 @@
+{
+  "question": "那需要谁审批？",
+  "history": [
+    {
+      "role": "user",
+      "content": "请假要提前多久申请？"
+    },
+    {
+      "role": "assistant",
+      "content": "请假须提前2个工作日在OA提交申请。"
+    }
+  ]
+}

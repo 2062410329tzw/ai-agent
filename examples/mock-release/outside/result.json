@@ -1,0 +1,9 @@
+{
+  "status": "insufficient_evidence",
+  "answer": "当前资料没有足够依据回答此问题。",
+  "citations": [],
+  "gaps": [
+    "缺少相关制度或产品资料"
+  ],
+  "follow_up_question": ""
+}

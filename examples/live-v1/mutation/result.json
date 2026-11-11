@@ -1,0 +1,9 @@
+{
+  "status": "model_error",
+  "answer": "模型网络错误或超时",
+  "citations": [],
+  "gaps": [
+    "模型网络错误或超时"
+  ],
+  "follow_up_question": ""
+}

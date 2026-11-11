@@ -1,0 +1,172 @@
+{
+  "run_id": "be0333c6-1a90-4545-88c8-6abfd32a3fa2",
+  "started_at": "2026-11-11T08:59:25.248046+00:00",
+  "mode": "live",
+  "model": "glm-4.5-flash",
+  "input": {
+    "question": "报销期限多久？",
+    "history": []
+  },
+  "knowledge_sha256": "d71202744e3a955ef7a361e1b9327dd2a3a813ffacb600adca31e7aa2079904b",
+  "prompt_sha256": "bbfbcca944f29a8761e0a1181dd8adc1381dc7a533f4110a6812a41f53ae083b",
+  "limits": {
+    "max_steps": 10,
+    "max_tools": 8
+  },
+  "failure_injection": "none",
+  "trace": [
+    {
+      "step": 1,
+      "timestamp": "2026-11-11T08:59:25.248046+00:00",
+      "model_metadata": {
+        "requested_model": "glm-4.5-flash",
+        "model": "glm-4.5-flash",
+        "request_id": "20261111165929b5f849db4ef44469",
+        "usage": {
+          "completion_tokens": 51,
+          "prompt_tokens": 708,
+          "prompt_tokens_details": {
+            "cached_tokens": 707
+          },
+          "total_tokens": 759
+        },
+        "finish_reason": "stop"
+      },
+      "decision": {
+        "action": "search_documents",
+        "arguments": {
+          "query": "报销期限",
+          "limit": 8
+        },
+        "reason": "需要查找关于报销期限的企业制度规定"
+      },
+      "observation": {
+        "ok": true,
+        "hits": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-01",
+            "title": "费用报销制度A",
+            "section_id": "S01",
+            "topic": "报销",
+            "score": 9,
+            "preview": "员工应在费用发生后45天内提交报销申请。报销申请需附发票及费用明细。"
+          }
+        ],
+        "total": 1,
+        "truncated": false,
+        "notice": "摘要仅用于发现资料，回答前必须读取原文；排序不代表制度优先级。"
+      },
+      "return_summary": {
+        "hits": [
+          "D01:S01"
+        ],
+        "total": 1,
+        "truncated": false
+      },
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "timestamp": "2026-11-11T08:59:32.848618+00:00",
+      "model_metadata": {
+        "requested_model": "glm-4.5-flash",
+        "model": "glm-4.5-flash",
+        "request_id": "20261111165937e5ceefd213024ea2",
+        "usage": {
+          "completion_tokens": 42,
+          "prompt_tokens": 915,
+          "prompt_tokens_details": {
+            "cached_tokens": 779
+          },
+          "total_tokens": 957
+        },
+        "finish_reason": "stop"
+      },
+      "decision": {
+        "action": "read_document",
+        "arguments": {
+          "doc_id": "D01",
+          "section_id": "S01"
+        },
+        "reason": "需要获取关于报销期限的完整原文内容"
+      },
+      "observation": {
+        "ok": true,
+        "document": {
+          "doc_id": "D01",
+          "version_date": "2026-01-01",
+          "title": "费用报销制度A",
+          "topic": "报销",
+          "scope": null,
+          "supersedes": null,
+          "section_id": "S01",
+          "text": "员工应在费用发生后45天内提交报销申请。报销申请需附发票及费用明细。"
+        }
+      },
+      "return_summary": {
+        "doc_id": "D01",
+        "section_id": "S01",
+        "text": "员工应在费用发生后45天内提交报销申请。报销申请需附发票及费用明细。"
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "timestamp": "2026-11-11T08:59:44.771023+00:00",
+      "model_metadata": {
+        "requested_model": "glm-4.5-flash",
+        "model": "glm-4.5-flash",
+        "request_id": "2026111116594974ab54da03104916",
+        "usage": {
+          "completion_tokens": 116,
+          "prompt_tokens": 1099,
+          "prompt_tokens_details": {
+            "cached_tokens": 956
+          },
+          "total_tokens": 1215
+        },
+        "finish_reason": "stop"
+      },
+      "decision": {
+        "action": "finish",
+        "arguments": {
+          "status": "completed",
+          "answer": "员工应在费用发生后45天内提交报销申请[D01:S01]。",
+          "citations": [
+            {
+              "doc_id": "D01",
+              "version_date": "2026-01-01",
+              "section_id": "S01",
+              "quote": "员工应在费用发生后45天内提交报销申请。报销申请需附发票及费用明细。"
+            }
+          ],
+          "gaps": [],
+          "follow_up_question": ""
+        },
+        "reason": "已获取明确的报销期限规定"
+      },
+      "outcome": "accepted",
+      "next_action": "end"
+    }
+  ],
+  "result": {
+    "status": "completed",
+    "answer": "员工应在费用发生后45天内提交报销申请[D01:S01]。",
+    "citations": [
+      {
+        "doc_id": "D01",
+        "version_date": "2026-01-01",
+        "section_id": "S01",
+        "quote": "员工应在费用发生后45天内提交报销申请。报销申请需附发票及费用明细。"
+      }
+    ],
+    "gaps": [],
+    "follow_up_question": ""
+  },
+  "tool_calls": 2,
+  "model_calls": 3,
+  "finished_at": "2026-11-11T09:00:11.347341+00:00",
+  "elapsed_seconds": 46.094,
+  "case_id": "mutation"
+}

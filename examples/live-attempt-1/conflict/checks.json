@@ -1,0 +1,11 @@
+{
+  "status": false,
+  "required_citations": false,
+  "answer_contains": false,
+  "answer_excludes": true,
+  "bounded": true,
+  "citation_integrity": true,
+  "supplementary_search": false,
+  "checked_after_reading_both": false,
+  "asks_for_scope": false
+}
